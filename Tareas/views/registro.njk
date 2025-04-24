@@ -1,0 +1,40 @@
+{% extends "base.njk" %}
+
+{% block contenido %}
+<section class="section">
+  <div class="container" style="max-width: 500px;">
+    <h1 class="title has-text-centered">Registro de usuario</h1>
+    {% if error %}
+      <div class="notification is-danger">{{ error }}</div>
+    {% endif %}
+    <form action="/usuarios/registro" method="POST">
+      <div class="field">
+        <label class="label">Correo</label>
+        <div class="control">
+          <input class="input" type="email" name="correo" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Nombre</label>
+        <div class="control">
+          <input class="input" type="text" name="nombre" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Contraseña</label>
+        <div class="control">
+          <input class="input" type="password" name="password" required>
+        </div>
+      </div>
+      <div class="field is-grouped is-grouped-right">
+        <div class="control">
+          <button class="button is-primary" type="submit">Registrar</button>
+        </div>
+        <div class="control">
+          <a class="button is-light" href="/">Cancelar</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

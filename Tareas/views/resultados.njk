@@ -1,0 +1,38 @@
+{% extends "base.njk" %}
+
+{% block contenido %}
+<section class="section">
+  <div class="container">
+    <h1 class="title is-3 has-text-centered mb-6">
+      Resultados para "{{ búsqueda }}"
+    </h1>
+
+    {% if obras.length > 0 %}
+      <div class="columns is-multiline">
+        {% for obra in obras %}
+          <div class="column is-one-third">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="/{{ obra.imágen }}" alt="{{ obra.título }}">
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title is-5">{{ obra.título }}</p>
+                <p class="subtitle is-6 has-text-grey">Procedencia: {{ obra.procedencia }}</p>
+                <div class="content">
+                  {{ obra.comentario | truncate(200, true, "…") }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="notification is-warning has-text-centered">
+        No se encontraron obras para "{{ búsqueda }}"
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

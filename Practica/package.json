@@ -1,0 +1,14 @@
+{
+  "name": "practicas-ssbw",
+  "version": "0.1",
+  "author": "Alexander",
+  "main": "index.mjs",
+  "scripts": {
+    "dev": "node --watch --env-file=.env index.mjs"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "express": "^4.21.2",
+    "nunjucks": "^3.2.4"
+  }
+}

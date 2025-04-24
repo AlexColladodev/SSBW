@@ -1,0 +1,37 @@
+{% extends "base.njk" %}
+
+{% block contenido %}
+<section class="hero is-link is-fullheight-with-navbar">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1">
+        Museo Arqueológico de Granada
+      </h1>
+      <h2 class="subtitle is-4">
+        SSBW
+      </h2>
+
+      <!-- 🧪 Formulario de búsqueda -->
+      <form action="/obras/buscar" method="get" class="mt-6">
+        <div class="field has-addons is-justify-content-center">
+          <div class="control">
+            <input class="input" type="text" name="búsqueda"
+                   placeholder="Buscar una palabra..."
+                   pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ]+" required>
+          </div>
+          <div class="control">
+            <button class="button is-info" type="submit">Buscar</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="box has-text-left is-light" style="max-width: 600px; margin: 2rem auto;">
+        <p class="mb-2">Contenido</p>
+        <ul>
+          <li>✔️ Contenido</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
