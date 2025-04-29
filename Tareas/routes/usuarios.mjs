@@ -2,19 +2,17 @@ import express from "express"
 import jwt from "jsonwebtoken"
 import bcrypt from "bcryptjs"
 import { PrismaClient } from "@prisma/client"
+import logger from "../logger.mjs"
 
 const router = express.Router()
 const prisma = new PrismaClient()
 
-// GET /usuarios/login — muestra formulario de login
 router.get("/login", (req, res) => {
     res.render("login.njk")
 })
 
-// POST /usuarios/login — procesa login
 router.post("/login", async (req, res) => {
     const { correo, password } = req.body
-
     try {
         const user = await prisma.usuario.findUnique({ where: { correo } })
         if (!user) return res.render("login.njk", { error: "Usuario no encontrado" })
@@ -31,35 +29,32 @@ router.post("/login", async (req, res) => {
         res.cookie("access_token", token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
-            maxAge: 2 * 60 * 60 * 1000 // 2 horas
+            maxAge: 2 * 60 * 60 * 1000
         })
 
         res.locals.usuario = user.nombre
         res.locals.rol = user.rol
 
+        logger.info(`🔐 Login correcto de: ${user.nombre}`)
         res.redirect("/")
     } catch (err) {
-        console.error("❌ Error en login:", err)
+        logger.error("Error en login: " + err.message)
         res.status(500).send("Error interno")
     }
 })
 
-// GET /usuarios/logout — borra la cookie
 router.get("/logout", (req, res) => {
     res.clearCookie("access_token")
+    logger.info("🚪 Logout exitoso")
     res.redirect("/")
 })
 
-// GET /usuarios/registro — muestra el formulario
-router.get('/registro', (req, res) => {
-    res.render('registro.njk')
+router.get("/registro", (req, res) => {
+    res.render("registro.njk")
 })
 
-
-// POST /usuarios/registro — crea nuevo usuario
 router.post("/registro", async (req, res) => {
     const { correo, nombre, password } = req.body
-
     try {
         const yaExiste = await prisma.usuario.findUnique({ where: { correo } })
         if (yaExiste) return res.render("login.njk", { error: "Usuario ya existe" })
@@ -70,9 +65,10 @@ router.post("/registro", async (req, res) => {
             data: { correo, nombre, password: hash }
         })
 
+        logger.info(`📝 Usuario registrado: ${correo}`)
         res.redirect("/usuarios/login")
     } catch (err) {
-        console.error("❌ Error en registro:", err)
+        logger.error("Error en registro: " + err.message)
         res.status(500).send("Error al registrar usuario")
     }
 })

@@ -1,37 +1,65 @@
 {% extends "base.njk" %}
 
 {% block contenido %}
-<section class="hero is-link is-fullheight-with-navbar">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title is-1">
-        Museo Arqueológico de Granada
-      </h1>
-      <h2 class="subtitle is-4">
-        SSBW
-      </h2>
-
-      <!-- 🧪 Formulario de búsqueda -->
-      <form action="/obras/buscar" method="get" class="mt-6">
-        <div class="field has-addons is-justify-content-center">
-          <div class="control">
-            <input class="input" type="text" name="búsqueda"
-                   placeholder="Buscar una palabra..."
-                   pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ]+" required>
-          </div>
-          <div class="control">
-            <button class="button is-info" type="submit">Buscar</button>
-          </div>
-        </div>
-      </form>
-
-      <div class="box has-text-left is-light" style="max-width: 600px; margin: 2rem auto;">
-        <p class="mb-2">Contenido</p>
-        <ul>
-          <li>✔️ Contenido</li>
-        </ul>
+<div class="container">
+  <div class="section">
+    <div class="columns">
+      <div class="column has-text-centered">
+        <h1 class="title" style="color: ghostwhite;">Museo Arqueológico de Granada</h1><br>
       </div>
     </div>
+
+    <!-- Tarjetas de obras -->
+    <div class="columns is-multiline is-centered">
+      {% if obras and obras.length > 0 %}
+        {% for obra in obras %}
+        <div class="column is-4">
+          <div class="card large">
+            <div class="card-image">
+              <figure class="image is-16by9">
+                <img src="/{{ obra.imágen }}" alt="{{ obra.título }}">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                </div>
+                <div class="media-content">
+                  <p class="title is-4 no-padding">{{ obra.título | truncate(24, true, "…") }}</p>
+                  <p class="subtitle is-6">{{ obra.procedencia | truncate(24, true, "…") }}</p>
+                </div>
+              </div>
+              <div class="content">
+                {{ obra.comentario | truncate(200, true, "…") }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="notification is-warning has-text-centered">
+          No hay obras disponibles en este momento.
+        </div>
+      {% endif %}
+    </div>
+
   </div>
-</section>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered has-text-white">
+      <div class="soc">
+        <a href="#"><i class="fa fa-github-alt fa-lg" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+      </div>
+      <p>
+        <strong>Museo Arqueológico de Granada</strong> - SSBW.
+      </p>
+    </div>
+  </div>
+</footer>
 {% endblock %}

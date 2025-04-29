@@ -4,12 +4,12 @@ import obrasRouter from "./routes/obras.mjs"
 import cookieParser from "cookie-parser"
 import jwt from "jsonwebtoken"
 import usuariosRouter from "./routes/usuarios.mjs"
+import { PrismaClient } from '@prisma/client'
 
-
+const prisma = new PrismaClient()
 const IN = process.env.IN || 'development'
 const app = express()
 
-// Configuración de Nunjucks
 nunjucks.configure('views', {
     autoescape: true,
     noCache: IN === 'development',
@@ -19,21 +19,7 @@ nunjucks.configure('views', {
 
 app.set('view engine', 'njk')
 
-// Middleware para servir archivos estáticos
 app.use(express.static('public'))
-
-// Rutas
-app.get('/', (req, res) => {
-    res.render('index.njk', {})
-})
-
-const PORT = process.env.PORT || 8000
-app.listen(PORT, () => {
-    console.log(`Servidor ejecutándose en http://localhost:${PORT}`)
-})
-
-app.use("/obras", obrasRouter)
-
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
@@ -56,5 +42,21 @@ const autentificación = (req, res, next) => {
 
 app.use(autentificación)
 
+app.use("/obras", obrasRouter)
 app.use("/usuarios", usuariosRouter)
 
+
+app.get('/', async (req, res) => {
+    try {
+        const obras = await prisma.obra.findMany();
+        res.render('index.njk', { obras });
+    } catch (err) {
+        console.error("Error cargando obras:", err);
+        res.status(500).send("Error al cargar la página principal.");
+    }
+});
+
+const PORT = process.env.PORT || 8000
+app.listen(PORT, () => {
+    console.log(`Servidor ejecutándose en http://localhost:${PORT}`)
+})

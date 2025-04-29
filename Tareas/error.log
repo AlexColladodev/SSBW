@@ -1,0 +1,17 @@
+[2025-04-24T00:10:40.144Z] ERROR: ❌ Error en la búsqueda: 
+Invalid `prisma.obra.findMany()` invocation:
+
+
+Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+[2025-04-24T12:25:03.393Z] ERROR: ❌ Error en la búsqueda: 
+Invalid `prisma.obra.findMany()` invocation:
+
+
+The table `public.Obra` does not exist in the current database.
+[2025-04-24T12:25:17.933Z] ERROR: ❌ Error en la búsqueda: 
+Invalid `prisma.obra.findMany()` invocation:
+
+
+The table `public.Obra` does not exist in the current database.

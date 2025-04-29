@@ -1,0 +1,67 @@
+[2025-04-24T00:10:36.254Z] INFO: Servidor ejecutándose en http://localhost:8000
+[2025-04-24T00:10:40.144Z] ERROR: ❌ Error en la búsqueda: 
+Invalid `prisma.obra.findMany()` invocation:
+
+
+Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+[2025-04-24T12:24:59.863Z] INFO: Servidor ejecutándose en http://localhost:8000
+[2025-04-24T12:25:03.393Z] ERROR: ❌ Error en la búsqueda: 
+Invalid `prisma.obra.findMany()` invocation:
+
+
+The table `public.Obra` does not exist in the current database.
+[2025-04-24T12:25:17.933Z] ERROR: ❌ Error en la búsqueda: 
+Invalid `prisma.obra.findMany()` invocation:
+
+
+The table `public.Obra` does not exist in the current database.
+[2025-04-24T12:33:45.758Z] INFO: Servidor ejecutándose en http://localhost:8000
+[2025-04-24T12:33:49.470Z] INFO: 🔎 Búsqueda realizada: "porta" → 3 resultado(s)
+[2025-04-24T12:34:10.869Z] INFO: 📝 Usuario registrado: colladoalex@corre.ugr.es
+[2025-04-24T14:38:50.614Z] INFO: Servidor ejecutándose en http://localhost:8000
+[2025-04-24T14:40:00.720Z] INFO: 🔎 Búsqueda realizada: "espada" → 2 resultado(s)
+[2025-04-24T14:40:02.236Z] INFO: 🔎 Búsqueda realizada: "espada" → 2 resultado(s)
+[2025-04-24T14:48:52.576Z] INFO: 🔎 Búsqueda realizada: "toro" → 2 resultado(s)
+[2025-04-24T14:48:54.495Z] INFO: 🔎 Búsqueda realizada: "toro" → 2 resultado(s)
+[2025-04-24T14:50:27.093Z] INFO: 🔎 Búsqueda realizada: "toro" → 2 resultado(s)
+[2025-04-24T14:50:28.941Z] INFO: 🔎 Búsqueda realizada: "toro" → 2 resultado(s)
+[2025-04-24T14:50:49.890Z] INFO: 🔎 Búsqueda realizada: "toro" → 2 resultado(s)
+[2025-04-24T14:51:14.322Z] INFO: 🔎 Búsqueda realizada: "toro" → 2 resultado(s)
+[2025-04-24T14:51:16.580Z] INFO: 🔎 Búsqueda realizada: "toro" → 2 resultado(s)
+[2025-04-24T16:28:35.457Z] INFO: Servidor ejecutándose en http://localhost:8000
+[2025-04-24T16:28:50.350Z] INFO: 🔎 Búsqueda realizada: "toro" → 2 resultado(s)
+[2025-04-24T16:28:52.273Z] INFO: 🔎 Búsqueda realizada: "toro" → 2 resultado(s)
+[2025-04-24T16:30:38.585Z] INFO: 🔎 Búsqueda realizada: "toro" → 2 resultado(s)
+[2025-04-24T16:31:12.097Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T16:31:15.223Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T16:32:59.966Z] INFO: 🔎 Búsqueda realizada: "toro" → 2 resultado(s)
+[2025-04-24T16:33:02.198Z] INFO: 🔎 Búsqueda realizada: "toro" → 2 resultado(s)
+[2025-04-24T17:05:35.763Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T17:06:16.494Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T17:06:19.077Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T17:10:30.924Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T17:12:48.694Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T17:12:50.423Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T17:49:42.622Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T17:49:48.275Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T18:03:46.832Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T18:03:48.711Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T18:25:22.390Z] INFO: 📝 Usuario registrado: colladoalexander252@gmail.com
+[2025-04-24T18:25:30.467Z] INFO: 🔐 Login correcto de: Alexander Collado
+[2025-04-24T20:43:24.001Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T20:43:24.323Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-24T21:35:22.800Z] INFO: Servidor ejecutándose en http://localhost:8000
+[2025-04-24T21:56:17.138Z] INFO: 🔎 Búsqueda realizada: "todo" → 3 resultado(s)
+[2025-04-24T22:40:35.548Z] INFO: 🔎 Búsqueda realizada: "todo" → 3 resultado(s)
+[2025-04-27T22:21:24.189Z] INFO: 🔎 Búsqueda realizada: "porta" → 3 resultado(s)
+[2025-04-28T19:26:53.216Z] INFO: 🔎 Búsqueda realizada: "porta" → 3 resultado(s)
+[2025-04-28T19:28:16.221Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-28T19:30:22.387Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-28T19:30:58.390Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-28T19:34:11.923Z] INFO: 🔎 Búsqueda realizada: "porta" → 3 resultado(s)
+[2025-04-28T19:34:14.096Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-28T19:35:10.294Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-28T19:40:32.167Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)
+[2025-04-28T19:41:16.795Z] INFO: 🔎 Búsqueda realizada: "oro" → 3 resultado(s)

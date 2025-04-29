@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SSBW Museo</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museo Arqueológico de Granada</title>
+
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+
+  <!-- Cards CSS específico -->
+  <link rel="stylesheet" href="https://bulmatemplates.github.io/bulma-templates/css/cards.css">
 </head>
-<body>
-  <section class="section">
+
+<body class="has-background-dark">
+
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="container">
-      {% block contenido %}
-      {% endblock %}
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <strong>Logo</strong>
+        </a>
+        <span class="navbar-burger burger" data-target="navbarMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item is-active" href="/">Inicio</a>
+          <a class="navbar-item" href="#">Historia</a>
+          <a class="navbar-item" href="#">Información</a>
+          <div class="navbar-item">
+            <form action="/obras/buscar" method="get" class="field has-addons">
+              <div class="control">
+                <input class="input" type="text" name="búsqueda" placeholder="Buscar obras..." required>
+              </div>
+              <div class="control">
+                <button class="button is-info" type="submit">Buscar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </nav>
+  {% block contenido %}
+  {% endblock %}
+
 </body>
 </html>

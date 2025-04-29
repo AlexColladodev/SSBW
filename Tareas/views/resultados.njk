@@ -14,12 +14,12 @@
             <div class="card">
               <div class="card-image">
                 <figure class="image is-4by3">
-                  <img src="/{{ obra.imágen }}" alt="{{ obra.título }}">
+                  <img src="/{{ obra.imágen }}" alt="{{ obra.título | truncate(24, true, "…") }}">
                 </figure>
               </div>
               <div class="card-content">
-                <p class="title is-5">{{ obra.título }}</p>
-                <p class="subtitle is-6 has-text-grey">Procedencia: {{ obra.procedencia }}</p>
+                <p class="title is-5">{{ obra.título | truncate(24, true, "…") }}</p>
+                <p class="subtitle is-6 has-text-grey">Procedencia: {{ obra.procedencia | truncate(24, true, "…") }}</p>
                 <div class="content">
                   {{ obra.comentario | truncate(200, true, "…") }}
                 </div>

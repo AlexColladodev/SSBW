@@ -20,6 +20,8 @@
     "winston": "^3.17.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.14.1",
     "playwright": "^1.51.1",
     "prisma": "^6.5.0"
   }

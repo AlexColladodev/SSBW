@@ -22,7 +22,6 @@ for (const obra of obras) {
     // Descargar imagen
     await descargarImagen(imgUrl, imgPath)
 
-    // Guardar obra en BD, usando ruta relativa a public
     await prisma.obra.create({
         data: {
             título: obra.titulo,
