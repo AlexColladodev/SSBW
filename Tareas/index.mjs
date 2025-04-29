@@ -5,6 +5,8 @@ import cookieParser from "cookie-parser"
 import jwt from "jsonwebtoken"
 import usuariosRouter from "./routes/usuarios.mjs"
 import { PrismaClient } from '@prisma/client'
+import apiRouter from "./routes/api.mjs";
+
 
 const prisma = new PrismaClient()
 const IN = process.env.IN || 'development'
@@ -44,6 +46,7 @@ app.use(autentificación)
 
 app.use("/obras", obrasRouter)
 app.use("/usuarios", usuariosRouter)
+app.use("/api", apiRouter);
 
 
 app.get('/', async (req, res) => {

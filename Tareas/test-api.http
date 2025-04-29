@@ -1,0 +1,24 @@
+// test-api.http
+
+### Verificar si existe el usuario por correo
+GET http://localhost:8000/api/usuario/colladoalexander252@gmail.com
+
+###
+
+### Obtener el número total de obras
+GET http://localhost:8000/api/obra/cuantas
+
+###
+
+### Obtener obras desde la 0 hasta la 10 (paginación)
+GET http://localhost:8000/api/obra?desde=0&hasta=10
+
+###
+
+### Obtener información de una obra por ID
+GET http://localhost:8000/api/obra/12
+
+###
+
+### Eliminar una obra por ID
+DELETE http://localhost:8000/api/obra/12

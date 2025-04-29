@@ -6,15 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museo Arqueológico de Granada</title>
 
-  <!-- Bulma CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-
-  <!-- Cards CSS específico -->
   <link rel="stylesheet" href="https://bulmatemplates.github.io/bulma-templates/css/cards.css">
 </head>
 
 <body class="has-background-dark">
-
 
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="container">
@@ -22,12 +18,16 @@
         <a class="navbar-item" href="/">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToZslnjj3o4K59PmjUJq3lpJB5qsdZ21rXbuoitgm-EwBBZw-8n9Rl4GDfPcYpucz-E1w&usqp=CAU" alt="Logo" style="height: 32px;">
         </a>
+        {% if usuario %}
+          <div class="navbar-item has-text-white">Bienvenido, {{ usuario }}</div>
+        {% endif %}
         <span class="navbar-burger burger" data-target="navbarMenu">
           <span></span>
           <span></span>
           <span></span>
         </span>
       </div>
+
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-end">
           <a class="navbar-item is-active" href="/">Inicio</a>
@@ -43,10 +43,18 @@
               </div>
             </form>
           </div>
+          <div class="navbar-item">
+            {% if usuario %}
+              <a class="button is-light" href="/usuarios/logout">Cerrar Sesión</a>
+            {% else %}
+              <a class="button is-primary" href="/usuarios/login">Iniciar Sesión</a>
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>
   </nav>
+
   {% block contenido %}
   {% endblock %}
 
