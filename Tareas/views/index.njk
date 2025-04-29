@@ -25,8 +25,12 @@
                 <div class="media-left">
                 </div>
                 <div class="media-content">
-                  <p class="title is-4 no-padding">{{ obra.título | truncate(24, true, "…") }}</p>
-                  <p class="subtitle is-6">{{ obra.procedencia | truncate(24, true, "…") }}</p>
+                  <p class="title is-4 no-padding has-text-black">
+                    {{ obra.título | truncate(24, true, "…") }}
+                  </p>
+                  <p class="subtitle is-6 has-text-grey-dark">
+                    {{ obra.procedencia | truncate(24, true, "…") }}
+                  </p>
                 </div>
               </div>
               <div class="content">
