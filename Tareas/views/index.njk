@@ -14,30 +14,30 @@
       {% if obras and obras.length > 0 %}
         {% for obra in obras %}
         <div class="column is-4">
-          <div class="card large">
-            <div class="card-image">
-              <figure class="image is-16by9">
-                <img src="/{{ obra.imágen }}" alt="{{ obra.título }}">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
+          <a href="/obras/{{ obra.id }}" style="text-decoration: none; color: inherit;">
+            <div class="card large is-clickable">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="/{{ obra.imágen }}" alt="{{ obra.título }}">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4 no-padding has-text-black">
+                      {{ obra.título | truncate(24, true, "…") }}
+                    </p>
+                    <p class="subtitle is-6 has-text-grey-dark">
+                      {{ obra.procedencia | truncate(24, true, "…") }}
+                    </p>
+                  </div>
                 </div>
-                <div class="media-content">
-                  <p class="title is-4 no-padding has-text-black">
-                    {{ obra.título | truncate(24, true, "…") }}
-                  </p>
-                  <p class="subtitle is-6 has-text-grey-dark">
-                    {{ obra.procedencia | truncate(24, true, "…") }}
-                  </p>
+                <div class="content">
+                  {{ obra.comentario | truncate(200, true, "…") }}
                 </div>
               </div>
-              <div class="content">
-                {{ obra.comentario | truncate(200, true, "…") }}
-              </div>
             </div>
-          </div>
+          </a>
         </div>
         {% endfor %}
       {% else %}

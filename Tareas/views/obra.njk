@@ -1,0 +1,25 @@
+{% extends "base.njk" %}
+
+{% block contenido %}
+<section class="section">
+  <div class="container">
+    <h1 class="title has-text-centered is-2 mb-4">{{ obra.título }}</h1>
+
+    <div class="columns is-variable is-8">
+      <div class="column is-5">
+        <figure class="image is-4by3">
+          <img src="/{{ obra.imágen }}" alt="{{ obra.título }}">
+        </figure>
+      </div>
+      <div class="column is-7">
+        <div class="content">
+          <p><strong class="has-text-dark">Procedencia:</strong><br>{{ obra.procedencia }}</p>
+          <p><strong class="has-text-dark">Descripción:</strong><br>{{ obra.descripcion }}</p>
+          <p><strong class="has-text-dark">Comentario:</strong><br>{{ obra.comentario }}</p>
+        </div>
+        <a href="/" class="button is-link mt-4">← Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

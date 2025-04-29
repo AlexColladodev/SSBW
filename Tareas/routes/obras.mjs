@@ -33,4 +33,22 @@ router.get('/buscar', async (req, res) => {
     }
 })
 
+router.get('/:id', async (req, res) => {
+    try {
+        const obra = await prisma.obra.findUnique({
+            where: { id: parseInt(req.params.id) }
+        })
+
+        if (!obra) {
+            return res.status(404).send("Obra no encontrada")
+        }
+
+        res.render('obra.njk', { obra })
+    } catch (err) {
+        console.error("❌ Error al mostrar obra:", err)
+        res.status(500).send("Error interno del servidor")
+    }
+})
+
+
 export default router
